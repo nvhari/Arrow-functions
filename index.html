@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+</head>
+<body>
+    <h1>Enter a String</h1>
+    <input type="text" id="inputString" placeholder="Type your string here">
+    <button onclick="processString()">Submit</button>
+    <p id="output"></p>
+
+    <script>
+        const processString = () => {
+            const inputString = document.getElementById('inputString').value;
+            const result = inputString
+                .split('')
+                .map((char, index) => `${index}${char.toUpperCase()}`)
+                .join('');
+            document.getElementById('output').textContent = result;
+        };
+    </script>
+</body>
+</html>
